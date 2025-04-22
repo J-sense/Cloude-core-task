@@ -1,15 +1,18 @@
 import { ThemeProvider } from "@/components/ui/theme-provider";
+import StoreProvider from "./StoreProvider";
 
 const Provider = ({ children }: { children: React.ReactNode }) => {
   return (
-    <ThemeProvider
-      attribute="class"
-      defaultTheme="system"
-      enableSystem
-      disableTransitionOnChange
-    >
-      {children}
-    </ThemeProvider>
+    <StoreProvider>
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="system"
+        enableSystem
+        disableTransitionOnChange
+      >
+        {children}
+      </ThemeProvider>
+    </StoreProvider>
   );
 };
 
