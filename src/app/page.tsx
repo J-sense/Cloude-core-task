@@ -1,12 +1,13 @@
-import SimpleCard from "@/components/section/Cards";
-import { ModeToggle } from "@/components/ui/mode-toggle";
-// import { ThemeProvider } from "@/components/ui/theme-provider";
+import HeroSection from "@/components/section/HeroSection";
+import Home from "@/components/section/Product";
+import ServicesSection from "@/components/section/ServicesSection ";
 
 const page = () => {
   return (
-    <div>
-      <ModeToggle></ModeToggle>
-      <SimpleCard />
+    <div className="max-w-7xl mx-auto mt-36 bg-slate-100  dark:bg-zinc-900">
+      <HeroSection></HeroSection>
+      <ServicesSection />
+      <Home />
     </div>
   );
 };
