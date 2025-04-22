@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../ui/button";
+import { Product } from "@/type";
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product }: { product: Product }) => {
   return (
-    <div className="bg-zinc-100 dark:bg-zinc-900 rounded-2xl border border-zinc-300 dark:border-zinc-800 hover:shadow-lg dark:hover:shadow-violet-900 transition-all duration-300  group relative overflow-hidden">
+    <div className="bg-zinc-100 dark:bg-zinc-900 rounded-2xl border border-zinc-300 dark:border-zinc-800 hover:shadow-lg transition-all duration-300  group relative overflow-hidden">
       {/* Product Image */}
       <div className="relative w-full h-56  overflow-hidden mb-4">
         <Image
@@ -39,7 +40,7 @@ const ProductCard = ({ product }) => {
       </div>
 
       {/* View Details Button */}
-      <Link href={`/product/${product.id}`}>
+      <Link href={`/products/${product.id}`}>
         <Button className="w-full mb-4 ">View Details</Button>
       </Link>
 
