@@ -4,6 +4,7 @@ import React, { useRef } from "react";
 import { Provider } from "react-redux";
 import persistStore from "redux-persist/lib/persistStore";
 import { PersistGate } from "redux-persist/integration/react";
+import Loading from "@/components/section/Loading";
 const StoreProvider = ({ children }: { children: React.ReactNode }) => {
   const storeRef = useRef<AppStore>(undefined);
   if (!storeRef.current) {
@@ -12,7 +13,7 @@ const StoreProvider = ({ children }: { children: React.ReactNode }) => {
   const cartpersistor = persistStore(storeRef.current);
   return (
     <Provider store={storeRef.current}>
-      <PersistGate loading={<>loading....</>} persistor={cartpersistor}>
+      <PersistGate loading={<Loading />} persistor={cartpersistor}>
         {children}
       </PersistGate>
     </Provider>

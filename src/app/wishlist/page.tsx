@@ -1,5 +1,7 @@
 "use client";
+import ProceedModel from "@/components/section/ProceedModel";
 import { Button } from "@/components/ui/button";
+
 import {
   decrementProduct,
   incrementProduct,
@@ -24,6 +26,7 @@ const Wishlist = () => {
     dispatch(removeProduct(id));
   };
   const totalPrice = useAppSelector(subtotalSelector);
+
   return (
     <div className="min-h-screen max-w-7xl mx-auto">
       <div className="max-w-4xl mx-auto mt-20 px-4 space-y-6">
@@ -99,9 +102,8 @@ const Wishlist = () => {
             <span className="text-xl font-semibold text-zinc-800 dark:text-zinc-100">
               total price ={totalPrice}
             </span>
-            <Button className="bg-violet-600 hover:bg-violet-700 dark:bg-violet-500 dark:hover:bg-violet-600 text-white">
-              Proceed to Checkout
-            </Button>
+
+            <ProceedModel />
           </div>
         )}
       </div>
