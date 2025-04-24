@@ -1,51 +1,69 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { Product } from "@/type";
+import { ShoppingCart } from "lucide-react";
+import { useDispatch } from "react-redux";
+import { addProduct } from "@/redux/features/cartSlice";
 
 const ProductCard = ({ product }: { product: Product }) => {
+  const dispatch = useDispatch();
+  const handleCart = (selectedProduct: Product) => {
+    dispatch(addProduct(selectedProduct));
+  };
   return (
-    <div className="bg-zinc-100 dark:bg-zinc-900 rounded-2xl border border-zinc-300 dark:border-zinc-800 hover:shadow-lg transition-all duration-300  group relative overflow-hidden">
+    <div className="group relative rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col">
       {/* Product Image */}
-      <div className="relative w-full h-56  overflow-hidden mb-4">
+      <div className="relative w-full h-56 overflow-hidden">
         <Image
           src={`https://admin.refabry.com/storage/product/${product.image}`}
           alt={product.name}
-          layout="fill"
-          objectFit="cover"
-          className="transition-transform duration-300 transform group-hover:scale-105"
+          fill
+          className="object-cover transition-transform duration-300 group-hover:scale-105"
         />
       </div>
 
-      {/* Product Name */}
-      <div className="p-3">
-        <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100 mb-1">
-          {product.name}
-        </h3>
+      {/* Content */}
+      <div className="flex flex-col flex-grow justify-between p-4">
+        <div>
+          <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100">
+            {product.name}
+          </h3>
+          <p className="text-sm text-zinc-600 dark:text-zinc-300 line-clamp-2 mt-1">
+            {product.short_desc}
+          </p>
+        </div>
 
-        {/* Description */}
-        <p className="text-sm text-zinc-600 dark:text-zinc-300 line-clamp-2 mb-3">
-          {product.short_desc}
-        </p>
+        <div className="flex items-center justify-between mt-4">
+          <span className="text-lg font-bold text-violet-700 dark:text-violet-300">
+            ৳{product.price}
+          </span>
+          <span className="text-xs px-3 py-1 rounded-full bg-violet-100 dark:bg-violet-950 text-violet-800 dark:text-violet-300 shadow-sm">
+            {product.category?.name}
+          </span>
+        </div>
       </div>
 
-      {/* Price and Category */}
-      <div className="flex items-center justify-between mb-1 p-3">
-        <span className="text-lg font-bold text-violet-700 dark:text-violet-300">
-          ৳{product.price}
-        </span>
-        <span className="text-xs px-3 py-1 rounded-full bg-violet-100 dark:bg-violet-950 text-violet-800 dark:text-violet-300 shadow">
-          {product.category?.name}
-        </span>
+      {/* Action Buttons */}
+      <div className="flex justify-between items-center p-4 pt-0 gap-2">
+        <Link href={`/products/${product.id}`} className="w-full">
+          <Button variant="outline" className="w-full">
+            View Details
+          </Button>
+        </Link>
+        <Button
+          variant="default"
+          size="icon"
+          className="shrink-0"
+          onClick={() => handleCart(product)}
+        >
+          <ShoppingCart className="w-5 h-5" />
+        </Button>
       </div>
-
-      {/* View Details Button */}
-      <Link href={`/products/${product.id}`}>
-        <Button className="w-full mb-4 ">View Details</Button>
-      </Link>
 
       {/* Accent Glow */}
-      <div className="absolute -bottom-6 -right-6 w-28 h-28 bg-violet-400 opacity-20 blur-3xl rounded-full pointer-events-none group-hover:opacity-40 dark:opacity-10 transition-all duration-500"></div>
+      <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-violet-400 opacity-20 blur-3xl rounded-full pointer-events-none group-hover:opacity-40 dark:opacity-10 transition-all duration-500"></div>
     </div>
   );
 };

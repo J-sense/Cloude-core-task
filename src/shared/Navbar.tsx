@@ -1,12 +1,15 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Heart } from "lucide-react";
 import { ModeToggle } from "@/components/ui/mode-toggle";
+import { useAppSelector } from "@/redux/hooks";
+import { orderProductSelector } from "@/redux/features/cartSlice";
 
 const Navbar = () => {
+  const allSelectedProducts = useAppSelector(orderProductSelector);
+  console.log(allSelectedProducts.length);
   const [isOpen, setIsOpen] = useState(false);
-
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
@@ -34,21 +37,35 @@ const Navbar = () => {
                 className="relative text-gray-700 dark:text-gray-300 font-medium transition-all duration-300 hover:text-violet-600 dark:hover:text-violet-400"
               >
                 {item}
-                <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-violet-500 transition-all duration-300 group-hover:w-full" />
               </Link>
             ))}
           </div>
 
-          {/* Right Side: Theme Toggle + Sign In */}
+          {/* Right Side */}
           <div className="flex items-center space-x-3">
+            {/* Theme toggle */}
             <ModeToggle />
+
+            {/* Selected products / wishlist */}
+            <Link href="/wishlist">
+              <button className="relative p-2 rounded-full hover:bg-violet-100 dark:hover:bg-violet-950 transition">
+                <div className=" border rounded-full p-2">
+                  <Heart className="w-5 h-5 text-violet-600 dark:text-violet-400" />
+                </div>
+                <small className="absolute -top-2 text-pink-500 font-medium text-xl">
+                  {allSelectedProducts.length}
+                </small>
+              </button>
+            </Link>
+
+            {/* Sign In */}
             <Link href="/signin">
-              <button className="px-4 py-1.5 bg-violet-600 hover:bg-violet-700 transition rounded-md text-white text-sm shadow-md">
+              <button className="px-4 py-1.5  bg-violet-600 hover:bg-violet-700 transition rounded-md text-white text-sm shadow-md">
                 Sign In
               </button>
             </Link>
 
-            {/* Mobile Toggle */}
+            {/* Mobile menu toggle */}
             <button
               onClick={toggleMenu}
               className="md:hidden text-gray-800 dark:text-white"
@@ -59,7 +76,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile menu */}
       {isOpen && (
         <div className="md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 px-4 py-4 space-y-3 shadow-md">
           {["Home", "Products", "About", "Contact"].map((item) => (
