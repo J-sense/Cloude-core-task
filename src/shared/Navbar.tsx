@@ -28,7 +28,7 @@ const Navbar = () => {
 
           {/* Nav Links Middle */}
           <div className="hidden md:flex gap-8 absolute left-1/2 transform -translate-x-1/2">
-            {["Home", "Products", "About", "Contact"].map((item) => (
+            {["Home", "Products", "Contact"].map((item) => (
               <Link
                 key={item}
                 href={`/${

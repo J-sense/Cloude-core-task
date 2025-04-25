@@ -50,13 +50,9 @@ const ProceedModel = () => {
     const res = await placeOrderAction(placeOrderInfo);
     console.log(res);
     if (res.status) {
-      toast(res.message);
+      toast.success(res.message);
     } else {
-      if (res.status) {
-        toast(res.message);
-      } else {
-        toast.error((Object as any).values(res.error)[0][0]) as any;
-      }
+      toast.error((Object as any).values(res.error)[0][0]) as any;
     }
   };
   return (

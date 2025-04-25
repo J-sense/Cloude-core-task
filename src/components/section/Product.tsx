@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import ProductCard from "@/components/section/ProductCard";
+import Link from "next/link";
+import { Button } from "../ui/button";
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -37,6 +39,11 @@ export default function Home() {
         {products.map((product, index) => (
           <ProductCard key={index} product={product} />
         ))}
+      </div>
+      <div className="text-center py-10">
+        <Link href={"/products"}>
+          <Button className="px-10">View all</Button>
+        </Link>
       </div>
     </div>
   );
