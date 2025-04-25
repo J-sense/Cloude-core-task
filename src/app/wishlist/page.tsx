@@ -12,6 +12,7 @@ import {
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { Minus, Plus, Trash2 } from "lucide-react";
 import Image from "next/image";
+import { toast } from "sonner";
 
 const Wishlist = () => {
   const wishlist = useAppSelector(orderProductSelector);
@@ -24,6 +25,7 @@ const Wishlist = () => {
   };
   const handleRemove = (id: number) => {
     dispatch(removeProduct(id));
+    toast.success("Remove from the cart");
   };
   const totalPrice = useAppSelector(subtotalSelector);
 

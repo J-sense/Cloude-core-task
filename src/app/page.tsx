@@ -4,7 +4,7 @@ import ServicesSection from "@/components/section/ServicesSection ";
 
 const page = () => {
   return (
-    <div className="max-w-7xl mx-auto mt-36 bg-slate-100  dark:bg-zinc-900">
+    <div className="max-w-7xl mx-auto  bg-slate-100  dark:bg-zinc-900">
       <HeroSection></HeroSection>
       <ServicesSection />
       <Home />

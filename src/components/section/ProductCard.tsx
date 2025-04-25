@@ -6,11 +6,13 @@ import { Product } from "@/type";
 import { ShoppingCart } from "lucide-react";
 import { useDispatch } from "react-redux";
 import { addProduct } from "@/redux/features/cartSlice";
+import { toast } from "sonner";
 
 const ProductCard = ({ product }: { product: Product }) => {
   const dispatch = useDispatch();
   const handleCart = (selectedProduct: Product) => {
     dispatch(addProduct(selectedProduct));
+    toast.success("product added to the cart");
   };
   return (
     <div className="group relative rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col">

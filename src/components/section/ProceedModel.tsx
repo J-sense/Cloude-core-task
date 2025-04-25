@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import React from "react";
 import {
@@ -17,6 +18,7 @@ import {
   subtotalSelector,
 } from "@/redux/features/cartSlice";
 import { placeOrderAction } from "@/serveractions";
+import { toast } from "sonner";
 
 const ProceedModel = () => {
   const form = useForm();
@@ -47,6 +49,15 @@ const ProceedModel = () => {
     };
     const res = await placeOrderAction(placeOrderInfo);
     console.log(res);
+    if (res.status) {
+      toast(res.message);
+    } else {
+      if (res.status) {
+        toast(res.message);
+      } else {
+        toast.error((Object as any).values(res.error)[0][0]) as any;
+      }
+    }
   };
   return (
     <div>

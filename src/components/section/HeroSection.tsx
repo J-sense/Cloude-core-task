@@ -2,10 +2,11 @@
 import Lottie from "lottie-react";
 import animationData from "../../assets/Animation - 1745287248481.json";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 const HeroSection = () => {
   return (
-    <section className="w-full bg-slate-200 rounded-2xl dark:bg-zinc-900 py-16 px-4 md:px-8 lg:px-16">
+    <section className="w-full pt-32 bg-slate-200 rounded-2xl dark:bg-zinc-900 md:py-16 px-4 md:px-8 lg:px-16">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         {/* Text Content */}
         <div className="space-y-6 text-center md:text-left">
@@ -22,9 +23,11 @@ const HeroSection = () => {
             <Button className="px-6 py-2 text-white bg-violet-600 hover:bg-violet-700 transition rounded-md">
               Get Started
             </Button>
-            <button className="text-violet-600 hover:underline font-medium text-sm sm:text-base">
-              Learn More
-            </button>
+            <Link href={"/products"}>
+              <button className="text-violet-600 hover:underline font-medium text-sm sm:text-base">
+                Learn More
+              </button>
+            </Link>
           </div>
         </div>
 
