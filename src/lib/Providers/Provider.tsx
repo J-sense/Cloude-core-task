@@ -1,3 +1,4 @@
+"use client";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import StoreProvider from "./StoreProvider";
 

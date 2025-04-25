@@ -1,8 +1,6 @@
-import React from "react";
-
 const Loading = () => {
   return (
-    <div className="flex justify-center items-center h-[80vh] bg-white dark:bg-black relative">
+    <div className="flex justify-center items-center h-[100vh] bg-white dark:bg-black relative">
       {/* Background Glow */}
       <div className="absolute w-64 h-64 bg-violet-500 opacity-20 dark:opacity-10 blur-3xl rounded-full animate-pulse"></div>
 

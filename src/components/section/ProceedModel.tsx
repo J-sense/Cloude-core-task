@@ -48,9 +48,10 @@ const ProceedModel = () => {
       delivery_charge: charg,
     };
     const res = await placeOrderAction(placeOrderInfo);
-    console.log(res);
+
     if (res.status) {
-      toast.success(res.message);
+      toast.success(res.message || "Order placed successfully!");
+      alert("order placed successfully");
     } else {
       toast.error((Object as any).values(res.error)[0][0]) as any;
     }
@@ -75,7 +76,7 @@ const ProceedModel = () => {
                     name="name"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Name</FormLabel>
+                        <FormLabel className="my-1 ms-1">Name</FormLabel>
                         <FormControl>
                           <Input {...field} value={field.value || ""} />
                         </FormControl>
@@ -87,7 +88,7 @@ const ProceedModel = () => {
                     name="phone"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Phone</FormLabel>
+                        <FormLabel className="my-1 ms-1">Phone</FormLabel>
                         <FormControl>
                           <Input {...field} value={field.value || ""} />
                         </FormControl>
@@ -99,7 +100,7 @@ const ProceedModel = () => {
                     name="address"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Address</FormLabel>
+                        <FormLabel className="my-1 ms-1">Address</FormLabel>
                         <FormControl>
                           <Input {...field} value={field.value || ""} />
                         </FormControl>

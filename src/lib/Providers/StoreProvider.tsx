@@ -4,7 +4,8 @@ import React, { useRef } from "react";
 import { Provider } from "react-redux";
 import persistStore from "redux-persist/lib/persistStore";
 import { PersistGate } from "redux-persist/integration/react";
-import Loading from "@/components/section/Loading";
+import Loading from "@/app/loading";
+// import Loading from "@/components/section/Loading";
 const StoreProvider = ({ children }: { children: React.ReactNode }) => {
   const storeRef = useRef<AppStore>(undefined);
   if (!storeRef.current) {
