@@ -3,7 +3,7 @@ import { Product } from "@/type";
 
 const page = async ({ params }: { params: Promise<{ id: string }> }) => {
   const { id } = await params;
-  const data = await fetch("https://admin.refabry.com/api/all/product/get");
+  const data = await fetch(process.env.NEXT_PUBLIC_BASE_URL as string);
   const posts = await data.json();
   const findOne = posts.data.data.find((pr: Product) => pr.id == Number(id));
   console.log(findOne);

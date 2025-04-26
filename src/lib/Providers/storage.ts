@@ -1,24 +1,26 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import createWebStorage from "redux-persist/lib/storage/createWebStorage";
+/* eslint-disable @typescript-eslint/no-require-imports */
+import type { Storage } from "redux-persist";
 
-const createNoopStorage = () => {
-  return {
-    getItem(_key: string) {
-      return Promise.resolve(null);
-    },
-    setItem(_key: string, value: any) {
-      return Promise.resolve(value);
-    },
-    removeItem(_key: string) {
-      return Promise.resolve();
-    },
-  };
-};
+const createNoopStorage = (): Storage => ({
+  getItem() {
+    return Promise.resolve(null);
+  },
+  setItem(_key, value) {
+    return Promise.resolve(value);
+  },
+  removeItem() {
+    return Promise.resolve();
+  },
+});
 
-const storage =
-  typeof window !== "undefined"
-    ? createWebStorage("local")
-    : createNoopStorage();
+let storage: Storage;
+
+if (typeof window !== "undefined") {
+  const createWebStorage =
+    require("redux-persist/lib/storage/createWebStorage").default;
+  storage = createWebStorage("local");
+} else {
+  storage = createNoopStorage();
+}
 
 export default storage;

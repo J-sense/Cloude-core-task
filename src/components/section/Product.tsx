@@ -13,7 +13,7 @@ export default function Home() {
     const fetchProducts = async () => {
       try {
         const response = await axios.get(
-          "https://admin.refabry.com/api/all/product/get"
+          process.env.NEXT_PUBLIC_BASE_URL as string
         );
         const productData = response?.data?.data?.data;
         if (productData) {

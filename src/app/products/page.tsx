@@ -3,7 +3,7 @@ import { Product } from "@/type";
 import React from "react";
 
 const page = async () => {
-  const res = await fetch("https://admin.refabry.com/api/all/product/get", {
+  const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL as string, {
     cache: "no-store",
   });
   const posts = await res.json();
