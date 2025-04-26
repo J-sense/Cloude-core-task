@@ -1,60 +1,62 @@
-🛍️ E-Commerce Store - Modern Redux & Next.js
-Project Screenshot
-(Replace with your actual screenshot)
+🛍️ NextCart - Modern E-Commerce with Next.js & Redux
+NextCart Demo
+(Replace with an actual screenshot or GIF of your project)
+
+Next.js
+Redux
+TypeScript
+Responsive
 
 🌟 Features
-Product Browsing: View all available products with details
-
-Shopping Cart: Add/remove items and adjust quantities
-
-Smart Calculations: Automatic cart total and tax calculations
-
-Dark/Light Mode: Toggle between dark and light themes
-
-Responsive Design: Works on all device sizes
-
-Type Safety: Built with TypeScript for better developer experience
-
+Feature	Description
+📦 Product Catalog	Browse products with filters, search, and detailed views
+🛒 Smart Cart	Add/remove items, adjust quantities, and save for later
+🧮 Real-time Calculations	Automatic subtotal, tax, and shipping cost
+🌓 Dark/Light Mode	Toggle between themes with persisted preferences
+📱 Fully Responsive	Optimized for mobile, tablet, and desktop
+🔒 Type-Safe	End-to-end TypeScript integration
 🚀 Live Demo
-Check out the live version here: https://yourecommerce.com
-(Replace with your actual live link)
+👉 https://nextcart-ecom.vercel.app (Replace with your actual URL)
 
-🛠️ Technologies Used
-Frontend: Next.js (React)
+🛠️ Tech Stack
+Frontend
+Framework: Next.js 14 (App Router)
 
-State Management: Redux Toolkit
+State Management: Redux Toolkit + RTK Query
 
-Type Safety: TypeScript
+Styling: Tailwind CSS + CSS Modules
 
-Styling: (CSS Modules/Tailwind/Styled Components - specify which you use)
+UI: Headless UI or ShadCN (Specify if used)
 
-Build Tool: Vite/Webpack (specify if relevant)
+Icons: Lucide Icons or Heroicons
 
-📦 Installation
-Clone the repository:
+Backend (If applicable)
+Mock API: Next.js API Routes
 
+ORM: Prisma (Specify if used)
+
+Tooling
+Type Checking: TypeScript 5
+
+Linting: ESLint + Prettier
+
+Bundler: Vite (if used)
+
+📦 Quick Start
+1. Clone & Install
 bash
-git clone https://github.com/yourusername/ecommerce-store.git
-Install dependencies:
-
-bash
+git clone https://github.com/yourusername/nextcart.git
+cd nextcart
 npm install
-
-# or
-
-yarn install
-Set up environment variables (create .env.local file):
+2. Configure Environment
+bash
+cp .env.example .env.local
+Edit .env.local with your keys:
 
 env
-NEXT_PUBLIC_API_URL=your_api_url
-
-# Add other environment variables as needed
-
-Run the development server:
-
+NEXT_PUBLIC_API_URL=https://api.example.com
+# Add other variables
+3. Run Dev Server
 bash
 npm run dev
-
-# or
-
-yarn dev
+Open http://localhost:3000
