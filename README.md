@@ -1,6 +1,6 @@
 🛍️ E-Commerce Store - Modern Redux & Next.js
 Project Screenshot
-(Replace with your actual screenshot)
+![NextCart Screenshot](./public/screenshot.png)
 
 🌟 Features
 Product Browsing: View all available products with details
