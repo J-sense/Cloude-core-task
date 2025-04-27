@@ -1,7 +1,6 @@
 
-![NextCart Screenshot](./public/screenshot.png)
-=======
-# 🛍️ NextCart - Modern E-Commerce with Next.js & Redux
+
+# 🛍️ Refabry - Modern E-Commerce with Next.js,TypeScript & Redux
 >>>>>>> f0dbbf851d2f28a14a7ac82a65f40d39be32ec7d
 
 A sleek, modern, and fully responsive e-commerce application built using the latest **Next.js 14 (App Router)**, **Redux Toolkit**, and **TypeScript**. Designed for a smooth user experience with dark/light mode, smart cart functionalities, and real-time calculations.
