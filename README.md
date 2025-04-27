@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-🛍️ E-Commerce Store - Modern Redux & Next.js
-Project Screenshot
+
 ![NextCart Screenshot](./public/screenshot.png)
 =======
 # 🛍️ NextCart - Modern E-Commerce with Next.js & Redux
