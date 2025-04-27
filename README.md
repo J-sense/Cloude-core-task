@@ -5,7 +5,7 @@
 
 A sleek, modern, and fully responsive e-commerce application built using the latest **Next.js 14 (App Router)**, **Redux Toolkit**, and **TypeScript**. Designed for a smooth user experience with dark/light mode, smart cart functionalities, and real-time calculations.
 
-> 🔗 **Live Demo**: [Refabry](https://nextcart-ecom.vercel.app](https://cloud-core-task-gold.vercel.app/))  
+> 🔗 **Live Demo**: [Refabry](https://cloud-core-task-gold.vercel.app/))  
 > 🖼️ ![🖼️ Refabry Screenshot](./public/screenshot.png)
 
 ---
@@ -33,10 +33,7 @@ A sleek, modern, and fully responsive e-commerce application built using the lat
 - **UI Components**: Headless UI / ShadCN *(Specify which one you used)*
 - **Icons**: Lucide Icons / Heroicons *(Specify which one you used)*
 
-### Backend (Optional)
 
-- **API**: Mock APIs via Next.js API Routes
-- **ORM**: Prisma *(if used)*
 
 ### Tooling
 
