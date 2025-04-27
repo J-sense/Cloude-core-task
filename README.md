@@ -1,60 +1,59 @@
+<<<<<<< HEAD
 🛍️ E-Commerce Store - Modern Redux & Next.js
 Project Screenshot
 ![NextCart Screenshot](./public/screenshot.png)
+=======
+# 🛍️ NextCart - Modern E-Commerce with Next.js & Redux
+>>>>>>> f0dbbf851d2f28a14a7ac82a65f40d39be32ec7d
 
-🌟 Features
-Product Browsing: View all available products with details
+A sleek, modern, and fully responsive e-commerce application built using the latest **Next.js 14 (App Router)**, **Redux Toolkit**, and **TypeScript**. Designed for a smooth user experience with dark/light mode, smart cart functionalities, and real-time calculations.
 
-Shopping Cart: Add/remove items and adjust quantities
+> 🔗 **Live Demo**: [Refabry](https://nextcart-ecom.vercel.app](https://cloud-core-task-gold.vercel.app/))  
+> 🖼️ ![🖼️ Refabry Screenshot](./public/screenshot.png)
 
-Smart Calculations: Automatic cart total and tax calculations
+---
 
-Dark/Light Mode: Toggle between dark and light themes
+## 🌟 Features
 
-Responsive Design: Works on all device sizes
+| Feature                | Description                                                                 |
+|------------------------|-----------------------------------------------------------------------------|
+| 📦 **Product Catalog** | Browse a collection of products with filters, search, and detailed views     |
+| 🛒 **Smart Cart**       | Add/remove items, adjust quantities, and save for later                     |
+| 🧮 **Real-Time Totals** | Automatically updates subtotal, tax, and shipping during cart changes       |
+| 🌓 **Dark/Light Mode**  | Theme toggle with user preferences saved across sessions                    |
+| 📱 **Fully Responsive** | Seamless experience on mobile, tablet, and desktop                          |
+| 🔒 **Type-Safe**        | Built entirely with TypeScript for reliability and better DX                |
 
-Type Safety: Built with TypeScript for better developer experience
+---
 
-🚀 Live Demo
-Check out the live version here: https://yourecommerce.com
-(Replace with your actual live link)
+## 🛠️ Tech Stack
 
-🛠️ Technologies Used
-Frontend: Next.js (React)
+### Frontend
 
-State Management: Redux Toolkit
+- **Framework**: Next.js 14 (App Router)
+- **State Management**: Redux Toolkit + RTK Query
+- **Styling**: Tailwind CSS + CSS Modules
+- **UI Components**: Headless UI / ShadCN *(Specify which one you used)*
+- **Icons**: Lucide Icons / Heroicons *(Specify which one you used)*
 
-Type Safety: TypeScript
+### Backend (Optional)
 
-Styling: (CSS Modules/Tailwind/Styled Components - specify which you use)
+- **API**: Mock APIs via Next.js API Routes
+- **ORM**: Prisma *(if used)*
 
-Build Tool: Vite/Webpack (specify if relevant)
+### Tooling
 
-📦 Installation
-Clone the repository:
+- **Type Checking**: TypeScript 5
+- **Linting & Formatting**: ESLint + Prettier
+- **Bundler**: Vite *(if used; otherwise remove)*
 
-bash
-git clone https://github.com/yourusername/ecommerce-store.git
-Install dependencies:
+---
 
-bash
+## 📦 Getting Started
+
+### 1. Clone & Install
+
+```bash
+git clone https://github.com/yourusername/nextcart.git
+cd nextcart
 npm install
-
-# or
-
-yarn install
-Set up environment variables (create .env.local file):
-
-env
-NEXT_PUBLIC_API_URL=your_api_url
-
-# Add other environment variables as needed
-
-Run the development server:
-
-bash
-npm run dev
-
-# or
-
-yarn dev
